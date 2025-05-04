@@ -5,26 +5,26 @@ CREATE DATABASE IF NOT EXISTS musicdb;
 USE musicdb;
 
 -- Artists table
-CREATE TABLE Artists (
+CREATE TABLE artists (
   artist_id INT AUTO_INCREMENT PRIMARY KEY,
   name VARCHAR(100) NOT NULL,
   genre VARCHAR(50)
 );
 
 -- Features table (guest artists)
-CREATE TABLE Features (
+CREATE TABLE features (
   feature_id INT AUTO_INCREMENT PRIMARY KEY,
   name VARCHAR(100) NOT NULL
 );
 
 -- Labels table
-CREATE TABLE Labels (
+CREATE TABLE labels (
   label_id INT AUTO_INCREMENT PRIMARY KEY,
   name VARCHAR(100) NOT NULL
 );
 
 -- Albums table
-CREATE TABLE Albums (
+CREATE TABLE albums (
   album_id INT AUTO_INCREMENT PRIMARY KEY,
   title VARCHAR(100) NOT NULL,
   release_year YEAR,
@@ -35,7 +35,7 @@ CREATE TABLE Albums (
 );
 
 -- Album_Features join table
-CREATE TABLE Album_Features (
+CREATE TABLE album_Features (
   album_id INT,
   feature_id INT,
   PRIMARY KEY (album_id, feature_id),
@@ -44,7 +44,7 @@ CREATE TABLE Album_Features (
 );
 
 -- Sample data
-INSERT INTO Artists (name, genre) VALUES 
+INSERT INTO artists (name, genre) VALUES 
   ('Taylor Swift', 'Pop'),
   ('Kendrick Lamar', 'Hip-Hop'),
   ('Adele', 'Soul'),
@@ -71,21 +71,21 @@ INSERT INTO Artists (name, genre) VALUES
   ('Post Malone', 'Hip-Hop'),
   ('SZA', 'R&B');
 
-INSERT INTO Features (name) VALUES
+INSERT INTO features (name) VALUES
   ('Travis Scott'),
   ('Drake'),
   ('Nicki Minaj'),
   ('The Weeknd'),
   ('21 Savage');
 
-INSERT INTO Labels (name) VALUES
+INSERT INTO labels (name) VALUES
   ('Republic Records'),
   ('Top Dawg Entertainment'),
   ('Sony Music Latin'),
   ('Universal Music Group'),
   ('Warner Music');
 
-INSERT INTO Albums (title, release_year, artist_id, label_id) VALUES
+INSERT INTO albums (title, release_year, artist_id, label_id) VALUES
   ('Midnights', 2022, 1, 1),
   ('DAMN.', 2017, 2, 2),
   ('YHLQMDLG', 2020, 4, 3),
@@ -106,7 +106,7 @@ INSERT INTO Albums (title, release_year, artist_id, label_id) VALUES
   ('The Last Don II', 2015, 19, 4),
   ('Legendaddy', 2022, 20, 4);
 
-INSERT INTO Album_Features (album_id, feature_id) VALUES
+INSERT INTO album_Features (album_id, feature_id) VALUES
   (2, 1),
   (2, 2),
   (3, 2),

@@ -1,0 +1,16 @@
+# Ignore MacOS and IDE files
+.DS_Store
+
+# Ignore Docker volumes/data
+db_data/
+*.log
+
+# Ignore temporary SQL backups or cache
+*.sql~
+
+# Ignore Node or PHP dependencies (if added in future)
+node_modules/
+vendor/
+
+# Optional: Ignore env files if using them
+.env

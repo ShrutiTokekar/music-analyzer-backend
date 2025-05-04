@@ -1,24 +1,51 @@
 <?php
 include 'connect.php';
 
-$sql = "SELECT artist_id, name, genre FROM Artists";
+// Query to join Albums and Artists
+$sql = "SELECT 
+            Albums.album_id, 
+            Albums.title, 
+            Albums.release_year, 
+            Artists.name AS artist_name 
+        FROM Albums
+        JOIN Artists ON Albums.artist_id = Artists.artist_id";
+
 $result = $conn->query($sql);
 
-echo "<table border='1' cellpadding='10'>
-<tr><th>Artist ID</th><th>Name</th><th>Genre</th></tr>";
+// Start HTML output
+echo "<style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+            font-family: 'Inter', sans-serif;
+        }
+        th, td {
+            padding: 12px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        th {
+            background-color: #faf3ec;
+            font-weight: bold;
+        }
+      </style>";
 
-if ($result->num_rows > 0) {
-  while($row = $result->fetch_assoc()) {
-    echo "<tr>
-            <td>{$row['artist_id']}</td>
-            <td>{$row['name']}</td>
-            <td>{$row['genre']}</td>
-          </tr>";
-  }
+if ($result && $result->num_rows > 0) {
+    echo "<table>";
+    echo "<tr><th>Album ID</th><th>Title</th><th>Artist</th><th>Year</th></tr>";
+    while ($row = $result->fetch_assoc()) {
+        echo "<tr>
+                <td>" . htmlspecialchars($row["album_id"]) . "</td>
+                <td>" . htmlspecialchars($row["title"]) . "</td>
+                <td>" . htmlspecialchars($row["artist_name"]) . "</td>
+                <td>" . htmlspecialchars($row["release_year"]) . "</td>
+              </tr>";
+    }
+    echo "</table>";
 } else {
-  echo "<tr><td colspan='3'>No results found</td></tr>";
+    echo "<p>No records found in the Albums table.</p>";
 }
-echo "</table>";
 
 $conn->close();
 ?>

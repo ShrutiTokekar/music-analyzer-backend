@@ -1,14 +1,12 @@
 <?php
-$servername = "localhost";
-$username = "root";  // default on local
-$password = "";      // change if you set a password
+$host = "db";               // Name of MySQL service from docker-compose
+$user = "root";
+$password = "rootpass";
 $database = "musicdb";
 
-// Create connection
-$conn = new mysqli($servername, $username, $password, $database);
+$conn = new mysqli($host, $user, $password, $database);
 
-// Check connection
 if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
+    die("Connection failed: " . $conn->connect_error);
 }
 ?>
