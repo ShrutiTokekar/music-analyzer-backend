@@ -12,17 +12,22 @@ This is a PHP-based backend project for a simple Music Database website. It allo
 
 
  ## Project Structure
-.
-├── .gitignore
-├── .dockerignore
-├── Dockerfile
-├── docker-compose.yml
-├── schema.sql
-├── index.html
-├── connect.php
-├── display.php
-├── logo.png
-└── README.md # You're here!
+
+- index.html – Static frontend with iframe
+
+- display.php – Outputs album data from MySQL
+
+- connect.php – PHP script for DB connection
+
+- schema.sql – Full music industry schema + sample data
+
+- Dockerfile & docker-compose.yml – Container setup
+
+- logo.png – Site branding
+
+- .gitignore / .dockerignore – Cleanup and optimization
+
+- README.md # You're here!
 
 ## Tech Stack
 - **PHP** – Backend scripting
@@ -46,13 +51,13 @@ This is a PHP-based backend project for a simple Music Database website. It allo
    EXPOSE 80
 3. Build and run the Docker container:
   $docker build -t my-php-backend .
-  $docker run -p 8000:80 my-php-backend
+  $docker run -p 8080:80 my-php-backend
 
-5. Visit http://localhost:8000 in your browser.
+5. Visit (http://localhost:8080/index.html) in your browser.
 
 ## Method 2: Without Docker
   - Install XAMPP, MAMP, or any LAMP stack.
-  - Place your project files in the server directory (e.g., htdocs in XAMPP).
+  - Place your project files in the server directory.
   - Start Apache and MySQL services.
   - Access your site at http://localhost/index.html.
 
