@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Music Trends Analyzer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+    body {
+      background-color: #fff8f4;
+      color: #444;
+    }
+    header {
+      padding: 2rem;
+      text-align: center;
+    }
+    header h1 {
+      font-size: 3rem;
+      color: #222;
+    }
+    header p {
+      margin-top: 0.5rem;
+      color: #666;
+      font-size: 1.2rem;
+    }
+    nav {
+      text-align: center;
+      margin: 1rem 0;
+    }
+    nav a {
+      color: #aa6c39;
+      text-decoration: none;
+      font-weight: bold;
+      margin: 0 1rem;
+    }
+    .model-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 400px;
+      margin-top: 2rem;
+    }
+    iframe {
+      width: 80%;
+      height: 400px;
+      border: none;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+    section {
+      padding: 2rem;
+      max-width: 900px;
+      margin: auto;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin-top: 2rem;
+      background-color: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    th, td {
+      border: 1px solid #eee;
+      padding: 1rem;
+      text-align: left;
+    }
+    th {
+      background-color: #faf3ec;
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      color: #999;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Music Industry Trends Analyzer</h1>
+    <p>A beautifully simple way to explore SQL-driven music data.</p>
+  </header>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <div class="model-container">
+   <img src="logo.png" alt="music Analyzer" height="400px" width="400px">
+  </div>
+
+  <section>
+    <h2>Database Preview</h2>
+    <p>The following table is a live preview from our SQL database, showcasing albums and associated artists.</p>
+    <iframe src="display.php" width="100%" height="400px" style="border:none;"></iframe>
+  </section>
+
+  <footer>
+    &copy; 2025 Music Analyzer Project
+  </footer>
+</body>
+</html>
+
+<!-- contact.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Me</title>
+  <style>
+    body {
+      background-color: #fff8f4;
+      color: #444;
+      font-family: 'Inter', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 5rem;
+    }
+    h2 {
+      margin-bottom: 1rem;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      width: 300px;
+    }
+    input, textarea {
+      margin-bottom: 1rem;
+      padding: 0.75rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+    input[type="submit"] {
+      background-color: #ffe0c7;
+      color: #333;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.2s;
+    }
+    input[type="submit"]:hover {
+      background-color: #ffd2b2;
+    }
+    a {
+      margin-top: 2rem;
+      color: #aa6c39;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <h2>Contact Me</h2>
+  <form action="mailto:shruti.tokekar23@gmail.com" method="post" enctype="text/plain">
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="email" name="email" placeholder="Your Email" required>
+    <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
+    <input type="submit" value="Send">
+  </form>
+  <a href="index.html">← Back to Home</a>
+</body>
+</html>
+
